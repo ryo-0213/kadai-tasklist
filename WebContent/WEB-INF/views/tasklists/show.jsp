@@ -7,13 +7,29 @@
             <c:when test="${tasklist != null}">
                 <h2>id : ${tasklist.id} のタスク詳細ページへ</h2>
 
-                <p>タイトル:<c:out value="${tasklist.title}" /></p>
-                <p>内容:<c:out value="${tasklist.content}" /></p>
-                <p>作成日時:<fmt:formatDate value="${tasklist.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
-                <p>更新日時:<fmt:formatDate value="${tasklist.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>タイトル</th>
+                            <td><c:out value="${tasklist.title}" /></td>
+                        </tr>
+                        <tr>
+                            <th>内容</th>
+                            <td><c:out value="${tasklist.content}" /></td>
+                        </tr>
+                        <tr>
+                            <th>作成日時</th>
+                            <td><fmt:formatDate value="${tasklist.create_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                        </tr>
+                        <tr>
+                            <th>更新日時</th>
+                            <td><fmt:formatDate value="${tasklist.update_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
-                <p><a href="${pageContext.request.contextPath}/edit?id=${tasklist.id}">このタスクを編集する</a></p>
+                <p><a href="${pageContext.request.contextPath}/edit?id=${tasklist.id}">このメッセージを編集する</a></p>
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータを見つかりませんでした。</h2>
