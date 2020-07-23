@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 
 import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,7 +47,11 @@ public class EditServlet extends HttpServlet {
         // タスクIDをセッションスコープに登録
         if(t != null) {
             request.getSession().setAttribute("tasklist_id", t.getId());
+
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasklists/edit.jsp");
+            rd.forward(request, response);
         }
+
     }
 
 }
