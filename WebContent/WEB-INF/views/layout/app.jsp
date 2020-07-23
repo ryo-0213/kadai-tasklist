@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -9,13 +10,15 @@
     </head>
     <body>
         <div id="wrapper">
-            <h1>タスク管理 アプリケーション</h1>
-        </div>
-        <div id="content">
-            ${param.content}
-        </div>
-        <div id="footer">
-            by ryo shimoda.
+            <div id="header">
+                    <h1>タスク管理 アプリケーション</h1>
+            </div>
+                <div id="content">
+                    ${param.content}
+            </div>
+                <div id="footer">
+                    by ryo shimoda.
+            </div>
         </div>
     </body>
 </html>
