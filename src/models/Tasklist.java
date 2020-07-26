@@ -22,15 +22,12 @@ import javax.persistence.Table;
             query = "SELECT COUNT(t) FROM Tasklist AS t"
             )
 })
-@Table(name = "tasklists")
+@Table(name = "tasks")
 public class Tasklist {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(name = "title", length = 255, nullable = false)
-    private String title;
 
     @Column(name = "content", length = 255, nullable = false)
     private String content;
@@ -47,14 +44,6 @@ public class Tasklist {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getContent() {

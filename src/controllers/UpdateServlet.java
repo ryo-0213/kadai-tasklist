@@ -44,9 +44,6 @@ public class UpdateServlet extends HttpServlet {
             Tasklist t = em.find(Tasklist.class, (Integer)(request.getSession().getAttribute("tasklist_id")));
 
             // フォームの内容を各プロパティに上書き
-            String title = request.getParameter("title");
-            t.setTitle(title);
-
             String content = request.getParameter("content");
             t.setContent(content);
 

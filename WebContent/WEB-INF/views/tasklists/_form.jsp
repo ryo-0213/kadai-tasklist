@@ -8,9 +8,6 @@
        </c:forEach>
     </div>
 </c:if>
-<label for="title">タイトル</label><br />
-<input type="text" name="title" value="${tasklist.title}" />
-<br /><br />
 
 <label for="context">内容</label><br />
 <input type="text" name="content" value="${tasklist.content}" />

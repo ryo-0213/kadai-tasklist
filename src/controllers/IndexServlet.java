@@ -60,7 +60,7 @@ public class IndexServlet extends HttpServlet {
         // リクエストスコープに保存する(セッションスコープからは削除)
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
-            request.getSession().removeAttribute("fulsh");
+            request.getSession().removeAttribute("flush");
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasklists/index.jsp");

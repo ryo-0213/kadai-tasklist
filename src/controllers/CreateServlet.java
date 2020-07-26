@@ -41,9 +41,6 @@ public class CreateServlet extends HttpServlet {
 
             Tasklist t = new Tasklist();
 
-            String title = request.getParameter("title");
-            t.setTitle(title);
-
             String content = request.getParameter("content");
             t.setContent(content);
 
@@ -74,14 +71,6 @@ public class CreateServlet extends HttpServlet {
                 // indexページにリダイレクト
                 response.sendRedirect(request.getContextPath() + "/index");
             }
-
-            em.getTransaction().begin();
-            em.persist(t);
-            em.getTransaction().commit();
-            request.getSession().setAttribute("flush", "登録が完了しました。");
-            em.close();
-
-            response.sendRedirect(request.getContextPath() + "/index");
         }
     }
 
